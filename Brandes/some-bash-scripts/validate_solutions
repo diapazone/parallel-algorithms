@@ -1,0 +1,7 @@
+#!/bin/bash
+cd src
+for var in rmat-8 rmat-9 rmat-10 rmat-11 rmat-12 random-8 random-9 random-10 random-11 random-12
+do
+echo "For" $var
+./validation -ans $var.ans -res $var.res
+done

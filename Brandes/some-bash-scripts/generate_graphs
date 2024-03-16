@@ -1,0 +1,9 @@
+#!/bin/bash
+cd src
+for var in 8 9 10 11 12
+do
+./gen_RMAT -s $var
+./gen_random -s $var
+./gen_valid_info -in rmat-$var
+./gen_valid_info -in random-$var
+done

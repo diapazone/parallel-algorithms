@@ -1,0 +1,6 @@
+#!/bin/bash
+bsub -n 1 -R "span[ptile=1]" -o src/test1.out mpiexec python Graph.py src/random-10 src/random-10.res
+for var in 2 4 16 20 30 40
+do
+bsub -n $var -R "span[ptile=$(($var/2))]" -o src/test$var.out mpiexec python Graph.py src/random-10 src/random-10.res
+done
